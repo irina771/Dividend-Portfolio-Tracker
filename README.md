@@ -12,6 +12,9 @@ Aplicación desarrollada en Python que consume la API de InvertirOnline (IOL) pa
 - Crear dashboards interactivos en Power BI.
 
 ---
+## Ejecutar el programa
+-cd Dividend-Portfolio-Traker
+-py main.py
 
 ## 🛠 Tecnologías
 
@@ -29,21 +32,16 @@ Aplicación desarrollada en Python que consume la API de InvertirOnline (IOL) pa
 
 ```text
 data/
-│
-├── prices.csv
-├── historical.csv
-├── portfolio.csv
-├── dividends.csv
-└── companies.csv
-
+├── ├── prices.csv
+|   ├── historical.csv
+|   ├── portfolio.csv
+|   ├── simulation.csv
 src/
-│
 ├── auth.py
-├── api.py
 ├── csv_manager.py
-├── historical.py
+├── simulator.py
 ├── portfolio.py
-└── utils.py
+├── api.py
 ```
 
 ---
@@ -56,7 +54,7 @@ src/
 - Cotización en tiempo real
 - Exportación a CSV
 
-### 🚧 Sprint 2
+### ✔ Sprint 2
 
 - Series históricas
 - Automatización
