@@ -1,15 +1,23 @@
+![Reporte analitico de dividendos](assets/report_dividend.png)
+
 # 📈 Dividend Portfolio Tracker
 
-Aplicación desarrollada en Python que consume la API de InvertirOnline (IOL) para obtener información financiera de CEDEARs, almacenar los datos en formato CSV y utilizarlos posteriormente en Power BI para análisis y visualización.
+ETL pipeline desarrollado en Python para analizar una cartera de CEDEARs mediante datos obtenidos desde la API de Invertir Online. El proyecto automatiza la extracción de cotizaciones, calcula métricas financieras, simula estrategias de inversión DCA con reinversión de dividendos y genera datasets listos para ser visualizados en Power BI.
 
-## 🎯 Objetivos
+## 🚀 ¿Qué hace este proyecto?
 
-- Consumir la API REST de IOL.
-- Obtener cotizaciones en tiempo real.
-- Descargar series históricas.
-- Registrar dividendos.
-- Analizar una cartera de inversión.
-- Crear dashboards interactivos en Power BI.
+Automatiza el análisis de una cartera de CEDEARs siguiendo un flujo ETL completo.
+
+El pipeline realiza las siguientes tareas:
+
+- Obtiene cotizaciones en tiempo real desde la API de Invertir Online.
+- Descarga el histórico de precios de cada activo.
+- Registra dividendos históricos.
+- Calcula métricas financieras del portfolio.
+- Simula inversiones mediante Dollar Cost Averaging (DCA).
+- Genera archivos CSV preparados para Power BI.
+
+El objetivo es demostrar habilidades de Data Analytics, ETL, Python, Pandas y Power BI aplicadas a datos financieros reales.
 
 
 ## Ejecutar el programa
@@ -58,22 +66,16 @@ Aplicación desarrollada en Python que consume la API de InvertirOnline (IOL) pa
 - CSV
 
 
-## 📂 Estructura
-
+## 📁 Archivos generados
 ```text
-data/
-├── ├── prices.csv
-|   ├── historical.csv
-|   ├── portfolio.csv
-|   ├── simulation.csv
-src/
-├── auth.py
-├── csv_manager.py
-├── simulator.py
-├── portfolio.py
-├── api.py
+|Archivo	                  |Descripción
+|prices.csv	              |Cotizaciones actuales
+|historical.csv	        |Histórico de precios
+|dividends.csv	            |Dividendos históricos
+|portfolio.csv	            |Configuración de la cartera
+|portfolio_metrics.csv	    |Métricas calculadas
+|simulation.csv	            |Resultado del simulador
 ```
-
 
 ## Pipeline
 ```
@@ -106,6 +108,19 @@ src/
 ```
 
 ---
+
+## 📊 Métricas calculadas
+El proyecto calcula automáticamente indicadores financieros como:
+
+- Valor actual del portfolio
+- Ganancia/Pérdida
+- Rendimiento (%)
+- Peso de cada activo
+- Dividend Yield
+- Yield on Cost (YOC)
+- Dividendos cobrados por año
+- Ingreso anual esperado
+- Evolución del capital mediante DCA
 
 ## 📊 Funcionalidades
 
