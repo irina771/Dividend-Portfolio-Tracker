@@ -3,8 +3,8 @@ from datetime import datetime
 
 import pandas as pd
 
-PRICES_CSV = "data/prices.csv"
-HISTORICAL_CSV = "data/historical.csv"
+PRICES_CSV = "data/raw/prices.csv"
+HISTORICAL_CSV = "data/raw/historical.csv"
 
 
 def save_quote(symbol, quote):
@@ -22,7 +22,7 @@ def save_quote(symbol, quote):
 
     df = pd.DataFrame([row])
 
-    os.makedirs("data/", exist_ok=True)
+    os.makedirs("data/raw", exist_ok=True)
 
     if os.path.exists(PRICES_CSV):
         df.to_csv(PRICES_CSV, mode="a", header=False, index=False)
@@ -32,7 +32,7 @@ def save_quote(symbol, quote):
 
 def save_historical(symbol, historical_data):
 
-    os.makedirs("data/", exist_ok=True)
+    os.makedirs("data/raw", exist_ok=True)
 
     rows = []
 
@@ -68,3 +68,19 @@ def save_historical(symbol, historical_data):
     )
 
     df.to_csv(HISTORICAL_CSV, index=False)
+
+
+def save_simulation(simulation, path="data/processed/simulation.csv"):
+    """
+    Guarda la simulación en CSV.
+    """
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    simulation.to_csv(path, index=False)
+
+
+def save_portfolio_metrics(metrics, path="data/processed/portfolio_metrics.csv"):
+    """
+    Guarda las métricas calculadas de la cartera en CSV.
+    """
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    metrics.to_csv(path, index=False)
